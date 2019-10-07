@@ -4,7 +4,10 @@
 
 const fs = require('fs');
 let readMe = [];
-readMe = JSON.parse(fs.readFileSync('sample.json', 'utf8'));
+readMe = fs.readFileSync('sample.json', 'utf8');
+if (readMe != []) {
+  readMe = JSON.parse(readMe);
+}
 
 //Get input from command line.
 const commandName = process.argv[2];
@@ -22,7 +25,7 @@ if (commandName == 'add') {
 } else if (commandName == 'list') {
   console.log(readMe);
 } else if (commandName == 'reset') {
-  fs.writeFileSync('sample.json', '');
+  fs.writeFileSync('sample.json', '[]');
 } else {
   console.log('Not a valid command');
 }
