@@ -31,13 +31,10 @@ if (commandName == 'add') {
 }
 // Function to Add new entry to JSON
 function add() {
-  let todo = '';
+  let todo = readMe.length + 1;
   let action = '';
   process.argv.forEach(function(val, index) {
-    if (index == 3) {
-      todo = process.argv[index];
-    }
-    if (index > 3) {
+    if (index === 3) {
       action = action + process.argv[index];
     }
   });
@@ -53,7 +50,12 @@ function remove() {
   if (itemToBeRemoved < 0) {
     console.log('Enter valid index to remove an entry');
   } else {
-    readMe.splice(readMe.findIndex(item => item.Todo === itemToBeRemoved), 1);
+    const indexOfElement = readMe.findIndex(item => item.Todo == itemToBeRemoved);
+    if (indexOfElement > -1) {
+      readMe.splice(indexOfElement, 1);
+    } else {
+      console.log('Todo Item not available in your action plan');
+    }
     writeToFile();
   }
 }

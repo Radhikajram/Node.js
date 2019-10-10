@@ -1,22 +1,18 @@
 [
   {
-    "Todo": "1",
-    "Action": "buy milk"
+    "Todo": 1,
+    "Action": "buy banana"
   },
   {
-    "Todo": "2",
-    "Action": "Pick up Sahana"
+    "Todo": 2,
+    "Action": "book Laundry"
   },
   {
-    "Todo": "3",
-    "Action": "book Laundary"
+    "Todo": 3,
+    "Action": "Finish Node.js hm"
   },
   {
-    "Todo": "4",
-    "Action": "Finish Week2 Homework"
-  },
-  {
-    "Todo": "5",
-    "Action": "Update the Profile"
+    "Todo": 4,
+    "Action": "pickup sahana"
   }
 ]
